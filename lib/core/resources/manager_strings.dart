@@ -33,5 +33,22 @@ class ManagerStrings {
   static const String  enterYourFullName = 'Enter your Full Name';
   static const String  haveAccount = 'Have Account ?';
   static const String  signIn = 'SignIn';
+  static const String  email = 'Email';
+  static const String  enterYourEmail = 'Enter your Email';
+  static const String  search = 'Search';
+  static const String  confirmPassword = 'Confirm Password';
+  static const String  enterYourConfirmPassword = 'Enter Your Confirm Password';
+  static const String  findYourHomeService = 'Find your home service';
+  static const String  needAHelpingHandToday = 'Need a helping hand today?';
+  static const String  ourServices = 'Our services';
+  static const String  seeAll = 'See All';
+  static const String  contractView = 'contract view';
+  static const String  accept = 'Accept';
+  static const String  profile = 'Profile';
+  static const String  deleteAccount = 'Delete Account';
+  static const String  productName = 'Product Name';
+  static const String  productPrice = 'Product Price';
+  static const String  productId = 'Product Id';
+  static const String  history = 'History';
 
 }

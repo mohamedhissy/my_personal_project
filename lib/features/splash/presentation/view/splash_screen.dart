@@ -4,7 +4,6 @@ import 'package:my_personal_project/core/resources/manager_colors.dart';
 import 'package:my_personal_project/core/resources/manager_font_weight.dart';
 import 'package:my_personal_project/core/resources/manager_height.dart';
 import 'package:my_personal_project/core/resources/manager_strings.dart';
-
 import '../../../../core/resources/manager_font_sizes.dart';
 import '../../../../route/routes.dart';
 
@@ -16,15 +15,14 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  
   @override
+
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2), (){
-      Navigator.pushReplacementNamed(context, Routes.onBoarding);
+    Future.delayed(Duration(seconds: 2),(){
+      Navigator.pushReplacementNamed(context, Routes.homeView);
     });
   }
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(

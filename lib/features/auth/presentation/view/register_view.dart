@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_personal_project/core/resources/manager_assets.dart';
@@ -21,7 +23,8 @@ class RegisterView extends StatelessWidget {
     return GetBuilder<AuthController>(
         builder: (controller) {
           return Scaffold(
-            resizeToAvoidBottomInset: false,
+            resizeToAvoidBottomInset: true,
+            extendBodyBehindAppBar: true,
             body: Align(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -43,20 +46,23 @@ class RegisterView extends StatelessWidget {
                   ),
                   ),
                   SizedBox(height: 20,),
-                  Container(
-                    margin: EdgeInsets.only(
-                      right: 270,
-                    ),
-                    child: Text(ManagerStrings.fullName,style: TextStyle(
-                      fontSize: ManagerFontSizes.s20,
-                      fontWeight: ManagerFontWeight.regular,
-                    ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        right: 270,
+                      ),
+                      child: Text(ManagerStrings.fullName,style: TextStyle(
+                        fontSize: ManagerFontSizes.s8,
+                        fontWeight: ManagerFontWeight.regular,
+                      ),
+                      ),
                     ),
                   ),
                   Center(
                   child: Padding(
                     padding: EdgeInsets.all(20),
                     child: TextField(
+                      controller: controller.fullNameTextEditingController,
                       decoration: InputDecoration(
                         hintText: ManagerStrings.enterYourFullName,
                         hintStyle: TextStyle(
@@ -77,22 +83,25 @@ class RegisterView extends StatelessWidget {
                     ),
                   ),
                 ),
-                  Container(
-                    margin: EdgeInsets.only(
-                      right: 300,
-                    ),
-                    child: Text(ManagerStrings.phone,style: TextStyle(
-                      fontSize: ManagerFontSizes.s20,
-                      fontWeight: ManagerFontWeight.regular,
-                    ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        right: 300,
+                      ),
+                      child: Text(ManagerStrings.email,style: TextStyle(
+                        fontSize: ManagerFontSizes.s8,
+                        fontWeight: ManagerFontWeight.regular,
+                      ),
+                      ),
                     ),
                   ),
                   Center(
                     child: Padding(
                       padding: EdgeInsets.all(20),
                       child: TextField(
+                        controller: controller.emailTextEditingController,
                         decoration: InputDecoration(
-                          hintText: ManagerStrings.enterYourPhone,
+                          hintText: ManagerStrings.enterYourEmail,
                           hintStyle: TextStyle(
                             color: ManagerColors.gray,
                           ),
@@ -111,20 +120,23 @@ class RegisterView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(
-                      right: 270,
-                    ),
-                    child: Text(ManagerStrings.password,style: TextStyle(
-                      fontSize: ManagerFontSizes.s20,
-                      fontWeight: ManagerFontWeight.regular,
-                    ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        right: 270,
+                      ),
+                      child: Text(ManagerStrings.password,style: TextStyle(
+                        fontSize: ManagerFontSizes.s8,
+                        fontWeight: ManagerFontWeight.regular,
+                      ),
+                      ),
                     ),
                   ),
                   Center(
                     child: Padding(
                       padding: EdgeInsets.all(20),
                       child: TextField(
+                        controller: controller.passwordTextEditingController,
                         decoration: InputDecoration(
                           hintText: ManagerStrings.enterYourPassword,
                           hintStyle: TextStyle(
@@ -145,10 +157,86 @@ class RegisterView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 8,),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        right: 270,
+                      ),
+                      child: Text(ManagerStrings.confirmPassword,style: TextStyle(
+                        fontSize: ManagerFontSizes.s8,
+                        fontWeight: ManagerFontWeight.regular,
+                      ),
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: Padding(
+                      padding: EdgeInsets.all(20),
+                      child: TextField(
+                        controller: controller.confirmPasswordTextEditingController,
+                        decoration: InputDecoration(
+                          hintText: ManagerStrings.enterYourConfirmPassword,
+                          hintStyle: TextStyle(
+                            color: ManagerColors.gray,
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(ManagerRadius.r10)),
+                            borderSide: BorderSide(color: ManagerColors.primaryColor, width: ManagerWidth.w2),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(ManagerRadius.r10)),
+                            borderSide: BorderSide(color: ManagerColors.primaryColor, width: ManagerWidth.w2),
+                          ),
+                          filled: true,
+                          fillColor: ManagerColors.bgColorTextFild,
+                          contentPadding: EdgeInsets.all(10.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        right: 270,
+                      ),
+                      child: Text(ManagerStrings.phone,style: TextStyle(
+                        fontSize: ManagerFontSizes.s8,
+                        fontWeight: ManagerFontWeight.regular,
+                      ),
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: Padding(
+                      padding: EdgeInsets.all(20),
+                      child: TextField(
+                        controller: controller.phoneTextEditingController,
+                        decoration: InputDecoration(
+                          hintText: ManagerStrings.enterYourPhone,
+                          hintStyle: TextStyle(
+                            color: ManagerColors.gray,
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(ManagerRadius.r10)),
+                            borderSide: BorderSide(color: ManagerColors.primaryColor, width: ManagerWidth.w2),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(ManagerRadius.r10)),
+                            borderSide: BorderSide(color: ManagerColors.primaryColor, width: ManagerWidth.w2),
+                          ),
+                          filled: true,
+                          fillColor: ManagerColors.bgColorTextFild,
+                          contentPadding: EdgeInsets.all(10.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 2,),
                   Container(
                   width: ManagerWidth.w360,
-                  child: BaseButton(onPressed: (){},
+                  child: BaseButton(onPressed: (){
+                    controller.performRegister(context);
+                  },
                     title: ManagerStrings.register,
                     textStyle: TextStyle(
                       fontSize: ManagerFontSizes.s18,
@@ -158,15 +246,14 @@ class RegisterView extends StatelessWidget {
                   ),
                 ),
                   SizedBox(height: 12,),
-                  Text('OR',style: TextStyle(
-                    fontWeight: ManagerFontWeight.regular,
-                  ),
-                  ),
-                  SizedBox(height: 12,),
-                  Image.asset(ManagerAssets.facebook, width: ManagerWidth.w390, height: ManagerHeight.h60,),
-                  SizedBox(height: 6,),
-                  Image.asset(ManagerAssets.google, width: ManagerWidth.w390, height: ManagerHeight.h60,),
-                  SizedBox(height: 12,),
+                  // Text('OR',style: TextStyle(
+                  //   fontWeight: ManagerFontWeight.regular,
+                  // ),),
+                  // SizedBox(height: 12,),
+                  // Image.asset(ManagerAssets.facebook, width: ManagerWidth.w390, height: ManagerHeight.h60,),
+                  // SizedBox(height: 6,),
+                  // Image.asset(ManagerAssets.google, width: ManagerWidth.w390, height: ManagerHeight.h60,),
+                  // SizedBox(height: 12,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

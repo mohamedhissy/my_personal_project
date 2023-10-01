@@ -14,4 +14,6 @@ class ManagerColors {
   static Color outBoardingTitleColor = const Color(0xff393939);
   static const Color progressIndicatorColor = Color(0xff979797);
   static const Color bgColorTextFild = Color(0xffF9FFF6);
+  static const Color homeScaffoldBackGround = Color(0xffF8F8FC);
+  static const Color displayBackground = Color(0xffDFDFDF);
 }
