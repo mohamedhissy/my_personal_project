@@ -57,4 +57,12 @@ class HomeController extends GetxController {
       height: ManagerHeight.h148,
     );
   }
+
+  productDetails (BuildContext context, int productId, String productImg, String productName, double productPrice){
+    homeModel.data.first.id = productId;
+    homeModel.data.first.thumbnailImage = productImg;
+    homeModel.data.first.name = productName;
+    homeModel.data.first.basePrice= productPrice;
+    Navigator.pushNamed(context, Routes.viewDetails);
+  }
 }

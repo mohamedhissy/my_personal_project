@@ -6,6 +6,26 @@ extension NonNullInt on int? {
       return this!;
     }
   }
+  int parseError() {
+    if (this == null) {
+      return 400;
+    } else {
+      return this!;
+    }
+  }
+}
+
+
+
+
+extension NonNullDouble on double? {
+  double onNull() {
+    if (this == null) {
+      return 0;
+    } else {
+      return this!;
+    }
+  }
 }
 
 extension NonNullString on String? {
@@ -16,12 +36,10 @@ extension NonNullString on String? {
       return this!;
     }
   }
-}
 
-extension NonNullBool on bool? {
-  bool onNull() {
+  String parseLocale() {
     if (this == null) {
-      return false;
+      return 'ar';
     } else {
       return this!;
     }
@@ -38,13 +56,13 @@ extension NonNullListString on List<String>? {
   }
 }
 
-extension NonNullDouble on double? {
-  double onNull() {
+
+extension NonNullBoolean on bool? {
+  bool onNull() {
     if (this == null) {
-      return 0;
+      return false;
     } else {
       return this!;
     }
   }
 }
-

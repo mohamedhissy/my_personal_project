@@ -8,6 +8,8 @@ import 'package:my_personal_project/core/resources/manager_strings.dart';
 import 'package:my_personal_project/core/resources/manager_width.dart';
 import 'package:my_personal_project/features/home/presentation/controller/home_controller.dart';
 
+import '../../../home/presentation/model/home_model.dart';
+
 
 class ViewDetails extends StatelessWidget {
   const ViewDetails({super.key});

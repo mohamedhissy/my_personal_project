@@ -25,7 +25,7 @@ class RegisterView extends StatelessWidget {
           return Scaffold(
             resizeToAvoidBottomInset: true,
             extendBodyBehindAppBar: true,
-            body: Align(
+            body: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -46,16 +46,14 @@ class RegisterView extends StatelessWidget {
                   ),
                   ),
                   SizedBox(height: 20,),
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        right: 270,
-                      ),
-                      child: Text(ManagerStrings.fullName,style: TextStyle(
-                        fontSize: ManagerFontSizes.s8,
-                        fontWeight: ManagerFontWeight.regular,
-                      ),
-                      ),
+                  Container(
+                    margin: EdgeInsets.only(
+                      right: 270,
+                    ),
+                    child: Text(ManagerStrings.fullName,style: TextStyle(
+                      fontSize: ManagerFontSizes.s8,
+                      fontWeight: ManagerFontWeight.regular,
+                    ),
                     ),
                   ),
                   Center(
@@ -83,16 +81,14 @@ class RegisterView extends StatelessWidget {
                     ),
                   ),
                 ),
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        right: 300,
-                      ),
-                      child: Text(ManagerStrings.email,style: TextStyle(
-                        fontSize: ManagerFontSizes.s8,
-                        fontWeight: ManagerFontWeight.regular,
-                      ),
-                      ),
+                  Container(
+                    margin: EdgeInsets.only(
+                      right: 300,
+                    ),
+                    child: Text(ManagerStrings.email,style: TextStyle(
+                      fontSize: ManagerFontSizes.s8,
+                      fontWeight: ManagerFontWeight.regular,
+                    ),
                     ),
                   ),
                   Center(
@@ -120,16 +116,14 @@ class RegisterView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        right: 270,
-                      ),
-                      child: Text(ManagerStrings.password,style: TextStyle(
-                        fontSize: ManagerFontSizes.s8,
-                        fontWeight: ManagerFontWeight.regular,
-                      ),
-                      ),
+                  Container(
+                    margin: EdgeInsets.only(
+                      right: 270,
+                    ),
+                    child: Text(ManagerStrings.password,style: TextStyle(
+                      fontSize: ManagerFontSizes.s8,
+                      fontWeight: ManagerFontWeight.regular,
+                    ),
                     ),
                   ),
                   Center(
@@ -157,16 +151,14 @@ class RegisterView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        right: 270,
-                      ),
-                      child: Text(ManagerStrings.confirmPassword,style: TextStyle(
-                        fontSize: ManagerFontSizes.s8,
-                        fontWeight: ManagerFontWeight.regular,
-                      ),
-                      ),
+                  Container(
+                    margin: EdgeInsets.only(
+                      right: 270,
+                    ),
+                    child: Text(ManagerStrings.confirmPassword,style: TextStyle(
+                      fontSize: ManagerFontSizes.s8,
+                      fontWeight: ManagerFontWeight.regular,
+                    ),
                     ),
                   ),
                   Center(
@@ -194,16 +186,14 @@ class RegisterView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        right: 270,
-                      ),
-                      child: Text(ManagerStrings.phone,style: TextStyle(
-                        fontSize: ManagerFontSizes.s8,
-                        fontWeight: ManagerFontWeight.regular,
-                      ),
-                      ),
+                  Container(
+                    margin: EdgeInsets.only(
+                      right: 270,
+                    ),
+                    child: Text(ManagerStrings.phone,style: TextStyle(
+                      fontSize: ManagerFontSizes.s8,
+                      fontWeight: ManagerFontWeight.regular,
+                    ),
                     ),
                   ),
                   Center(

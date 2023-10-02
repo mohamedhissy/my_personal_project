@@ -82,6 +82,14 @@ class AppSettingsSharedPreferences {
 
   String get userPhone =>
       _sharedPreferences.getString(KeyConstants.userPhone).onNull();
+  Future<void> setDefaultLocale(String lang) async {
+    await _sharedPreferences.setString(KeyConstants.localeKey, lang);
+  }
+
+  String get defaultLocale =>
+      _sharedPreferences.getString(KeyConstants.localeKey).parseLocale();
+
+
 //
 //   Future<void> setDefaultLocale(String lang) async {
 //     await _sharedPreferences.setString(KeyConstants.localeKey, lang);

@@ -9,3 +9,6 @@ class ManagerAssets {
   static const String home1 = 'assets/images/home/home1.png';
   static const String profile = 'assets/images/profile/this_profile.png';
 }
+class ManagerPaths {
+  static const String translationsPath = 'assets/translations';
+}

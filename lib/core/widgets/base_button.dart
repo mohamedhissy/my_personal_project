@@ -10,8 +10,8 @@ import '../resources/manager_width.dart';
 class BaseButton extends StatelessWidget {
   final String title;
   final bool isVisibleIcon;
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final Color bgColor;
   final double elevation;
   void Function() onPressed;
@@ -26,8 +26,8 @@ class BaseButton extends StatelessWidget {
     super.key,
     this.title = 'start',
     this.isVisibleIcon = Constants.baseButtonVisibleIcon,
-    this.width = ManagerWidth.w64,
-    this.height = ManagerHeight.h50,
+   this.height,
+    this.width,
     this.bgColor = ManagerColors.primaryColor,
     this.textStyle,
     this.elevation = Constants.baseButtonElevation,
@@ -42,8 +42,8 @@ class BaseButton extends StatelessWidget {
         elevation: elevation,
         backgroundColor: bgColor,
         minimumSize: Size(
-          width,
-          height,
+          width ?? ManagerWidth.w64,
+          height ?? ManagerWidth.w64,
         ),
       ),
       child: Row(

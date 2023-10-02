@@ -139,26 +139,31 @@ class HomeView extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, Routes.viewDetails);
-                        },
-                        child: Container(
-                          width: 355,
-                          height: 360,
-                          // color: Colors.red,
-                          child: GridView.builder(
-                              gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                mainAxisSpacing: 10,
-                                crossAxisSpacing: 10,
-                              ),
-                              itemCount: controller.homeModel.data.length,
-                              itemBuilder: (context, index) {
-                                HomeDataModel homeDataModel =
-                                    controller.homeModel.data[index];
-                                return Container(
+                      Container(
+                        width: 355,
+                        height: 360,
+                        // color: Colors.red,
+                        child: GridView.builder(
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              mainAxisSpacing: 10,
+                              crossAxisSpacing: 10,
+                            ),
+                            itemCount: controller.homeModel.data.length,
+                            itemBuilder: (context, index) {
+                              HomeDataModel homeDataModel =
+                                  controller.homeModel.data[index];
+                              return InkWell(
+                                onTap: () {
+                                  controller.productDetails(
+                                      context,
+                                      homeDataModel.id,
+                                      homeDataModel.thumbnailImage,
+                                      homeDataModel.name,
+                                      homeDataModel.basePrice);
+                                },
+                                child: Container(
                                   width: ManagerWidth.w90,
                                   height: ManagerHeight.h180,
                                   decoration: BoxDecoration(
@@ -174,47 +179,32 @@ class HomeView extends StatelessWidget {
                                   child: Container(
                                     color: ManagerColors.white,
                                     margin:
-                                        EdgeInsetsDirectional.only(top: 150),
-                                    child: Row(
+                                        EdgeInsetsDirectional.only(top: 120),
+                                    child: Column(
                                       children: [
                                         Text(
                                           homeDataModel.name,
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
                                           style: TextStyle(
                                               fontSize: 10,
-                                              color:
-                                                  ManagerColors.primaryColor,
+                                              color: ManagerColors.primaryColor,
                                               fontWeight:
                                                   ManagerFontWeight.bold),
-                                        ),
-                                        SizedBox(
-                                          width: ManagerWidth.w40,
                                         ),
                                         Text(
                                           '${a}',
                                           style: TextStyle(
-                                              color:
-                                                  ManagerColors.primaryColor,
-                                              fontWeight:
-                                                  ManagerFontWeight.bold),
-                                        ),
-                                        SizedBox(
-                                          width: ManagerWidth.w8,
-                                        ),
-                                        Text(
-                                          controller
-                                              .homeModel.data.first.unit,
-                                          style: const TextStyle(
-                                              color:
-                                                  ManagerColors.primaryColor,
+                                              color: ManagerColors.primaryColor,
                                               fontWeight:
                                                   ManagerFontWeight.bold),
                                         ),
                                       ],
                                     ),
                                   ),
-                                );
-                              }),
-                        ),
+                                ),
+                              );
+                            }),
                       ),
                     ],
                   ),
